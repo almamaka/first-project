@@ -11,6 +11,7 @@ driver.find_element(By.ID, "b").send_keys("5")
 driver.find_element(By.ID, "gomb1").click()
 
 header_text = driver.find_element(By.XPATH, "//h1").text
+print(header_text)
 assert header_text == "Calc"
 
 driver.close()
