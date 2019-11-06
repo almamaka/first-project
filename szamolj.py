@@ -4,8 +4,12 @@ from selenium.webdriver.common.by import By
 driver = webdriver.Chrome()
 
 driver.get("https://almamaka.github.io/first-project/")
+#driver.find_element(By.NAME, "a").send_keys("6")
 
-driver.find_element(By.NAME, "a").send_keys("6")
+first_input_field = driver.find_element(By.NAME, "a")
+first_input_field.send_keys("6")
+first_input_field.screenshot("first-input.png")
+
 driver.find_element(By.NAME, "b").send_keys("5")
 
 driver.find_element(By.NAME, "gomb1").click()
