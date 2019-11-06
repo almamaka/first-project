@@ -9,6 +9,9 @@ driver.find_element(By.NAME, "a").send_keys("6")
 driver.find_element(By.NAME, "b").send_keys("5")
 
 driver.find_element(By.NAME, "gomb1").click()
+result = driver.find_element_by_id("result-input").get_attribute("value")
+print(result)
+assert result == "11"
 
 header_text = driver.find_element(By.XPATH, "//h1").text
 print(header_text)
