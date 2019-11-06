@@ -9,10 +9,22 @@
     <h1>Calc</h1>
     <p>Ez egy csudaszámológép.</p>
     <form>
-        <input type = "number" ID = "a"/>
-        +
-        <input type = "number" ID = "b"/>
-        <input type = "submit" ID = "gomb1" value = "Számolj!"/>
+        <div>
+            <input type = "number" name = "a" id = "a-input"/>
+            +
+            <input type = "number" name = "b" id = "b-input"/>
+            <input type = "submit" name = "gomb1" value = "Számolj!"
+                    id = "submit-button"/>
+        </div>
+        <div>
+            Eredmény:
+            <input type = "number" name = "result"
+                   id = "result-input"
+                   readonly = "true"/>
+        </div>
+
+
     </form>
+    <script src="szamolas.js"></script>
 </body>
 </html>
