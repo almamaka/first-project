@@ -61,6 +61,8 @@ type_to_name_input('Alma')
 # monogram = read_monogram()
 print(wait_for_monogram('A'))
 
+# valamit átírok benne mert ezahülyenemküldifel
+
 #print(hibauzenet)
 
 
