@@ -1,3 +1,5 @@
+import time
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
@@ -62,8 +64,9 @@ def click_on_create_employee_button():
     driver.find_element(By.ID, 'create-form:save-button').click()
 
 
-def type_to_card_input(card_number):
-    driver.find_element(By.ID, "create-form:card-number-input").send_keys(card_number)
+def type_to_card_input_with_random_number(card_number):
+    driver.find_element(By.ID, "create-form:card-number-input").send_keys(card_number + str(time.time()))
+
 
 click_to_name_input()
 click_to_header()
@@ -74,7 +77,7 @@ type_to_name_input('Alma')
 # monogram = read_monogram()
 print(wait_for_monogram('A'))
 click_on_create_employee_button()
-type_to_card_input(111111111111111111111111)
+type_to_card_input_with_random_number("11111111111")
 click_on_create_employee_button()
 
 
