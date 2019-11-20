@@ -3,6 +3,13 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
+
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
+driver = webdriver.Chrome(options=chrome_options)
+driver.get("http://www.learnwebservices.com/empapp/create-employee.xhtml")
+
+
 def print_welcome():
     print("Kezdodhet a teszteles!")
 
@@ -14,8 +21,7 @@ print_welcome()
 # majd írj egy olyan fvt, ami ráklikkel a címsorra, click_to_header()
 # írj egy fvt, mely paraméterként megadott hibaüzenetre vár, wait_for_error_message()
 # olvassa be a monogramot, és azzal térjen vissza, read_monogram()
-driver = webdriver.Chrome()
-driver.get("http://www.learnwebservices.com/empapp/create-employee.xhtml")
+
 
 
 def click_to_name_input():
@@ -52,6 +58,13 @@ def wait_for_monogram(expected_monogram):
     return driver.find_element(By.ID, 'create-form:monogram-text').text
 
 
+def click_on_create_employee_button():
+    driver.find_element(By.ID, 'create-form:save-button').click()
+
+
+def type_to_card_input(card_number):
+    driver.find_element(By.ID, "create-form:card-number-input").send_keys(card_number)
+
 click_to_name_input()
 click_to_header()
 wait_for_error_message('Az alkalmazott nevét meg kell adni!')
@@ -60,6 +73,9 @@ click_to_name_input()
 type_to_name_input('Alma')
 # monogram = read_monogram()
 print(wait_for_monogram('A'))
+click_on_create_employee_button()
+type_to_card_input(111111111111111111111111)
+click_on_create_employee_button()
 
 
 
