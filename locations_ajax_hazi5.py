@@ -45,10 +45,12 @@ def create_new_location():
 
 
 
-def find_new_location():
-    found_location_name = driver.find_element(By.XPATH, "//table/tbody/tr[td[text() = location_name]]").text
+def find_new_location(location_name):
+    found_location_name = driver.find_element(By.XPATH, '//table/tbody/tr[td[text() ="' +location_name+'"]]').text
+    # Ha '-vel jelölöd a stringet akkor nem kell escapelni a "-t
     return found_location_name
-
+# Am ez lehet elhasal amikor először futtatod le és még nincs ilyen név az ajax miatt.
+# Most van benne ezért megtalálja valamelyik előzőt, ez meg félrevezető lehet
 
 def equal_to_new_location(found_location_name, location_name):
     found_location_name = driver.find_element(By.XPATH, "//table/tbody/tr[td[text() = location_name]]").text
@@ -63,7 +65,7 @@ click_on_create_location()
 type_location_name("Almafalva")
 type_coords("55", "57.11")
 create_new_location()
-find_new_location()
+find_new_location("Almafalva")
 equal_to_new_location()
 
 
