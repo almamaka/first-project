@@ -50,7 +50,9 @@ def find_new_location():
     return found_location_name
 
 
-def equal_to_new_location():
+def equal_to_new_location(found_location_name, location_name):
+    found_location_name = driver.find_element(By.XPATH, "//table/tbody/tr[td[text() = location_name]]").text
+    location_name = 'Almafalva'
     if found_location_name == location_name:
         print('New location equals to found location!')
     else:
