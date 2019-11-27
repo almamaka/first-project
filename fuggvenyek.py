@@ -37,7 +37,8 @@ def type_to_name_input(name):
 def click_to_header():
     driver.find_element(By.XPATH, '//html/body/div/h1').click()
 
-def wait_for_error_message(hibauzenet):
+def wait_for_er
+    ror_message(hibauzenet):
     # driver.find_element(By.XPATH, "//span[@class = 'invalid-feedback']").text
 
     WebDriverWait(driver, 10).until(
