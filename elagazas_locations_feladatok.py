@@ -52,7 +52,6 @@ def print_when_lat_greater_than_48(name):
         print("Szelesseg nagyobb mint 48!")
 
 
-
 def print_when_lat_kisebb_mint_48(name):
     lat = find_lat_from_name(name)
 
@@ -60,7 +59,14 @@ def print_when_lat_kisebb_mint_48(name):
         print("Szelesseg kisebb mint 48!")
 
 
+def print_when_lat_ket_ertek_koze_esik(name):
+    lat = find_lat_from_name(name)
+
+    if 48.2 < float(lat) < 48.4:
+        print("Szelessegi kordinatacska 48.2 es 48.4 koze esik!")
+
+
 #location_lat_coord_is_greater_than_48("fityiszváros")
-find_lat_from_name("fityiszváros")
-print_when_lat_kisebb_mint_48("fityiszváros")
+find_lat_from_name("Aaaztamindenit")
+print_when_lat_ket_ertek_koze_esik("Aaaztamindenit")
 

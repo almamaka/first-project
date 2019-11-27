@@ -60,8 +60,8 @@ def equal_to_new_location(found_location_name, location_name):
 
 
 click_on_create_location()
-type_location_name("Almafalva")
-type_coords("55", "57.11")
+type_location_name("Aaaztamindenit")
+type_coords("48.322", "57.11")
 create_new_location()
 find_new_location()
 equal_to_new_location()
