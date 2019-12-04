@@ -72,6 +72,16 @@ def test_find_owners_page():
     find_last_name_input_on_find_owner_page()
 
 
+def print_veterinarian_count():
+    goto_veterinarians()
+    rows = driver.find_elements(By.XPATH, "//tbody/tr")
+    i = 0
+    for row in rows:
+        row.find_element(By.XPATH, "//td[1]")
+        i = i + 1
+    print(str(i) + ' rows in table')
+
+
 test_home_page(driver.title, "Welcome", "img")
 #assert_title_is(driver.title)
 #assert_header_is("Welcome")
@@ -84,6 +94,7 @@ goto_home_page()
 
 
 test_find_owners_page()
+print_veterinarian_count()
 #find_last_name_label_on_find_owner_page()
 #driver.close()
 
