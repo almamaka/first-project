@@ -6,7 +6,7 @@ class CreateLocationPage:
     def __init__(self, driver: WebDriver):
         self.driver = driver
 
-    def fill_create_location_form(self, name, coordinates):
+    def fill_create_location_form(self, name="Almafalva", coordinates='1,1'):
         self.driver.find_element_by_id("name-input").send_keys(name)
         self.driver.find_element_by_id("coords-input").send_keys(coordinates)
 
